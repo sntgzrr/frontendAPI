@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card-body"></div>
+    <h2 class="card-title">{{titulo}}</h2>
+    <form>
+        <label for="name" class="col-form-label col-sm-2">Nombre Producto</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" [(ngModel)]="producto.name">
+            <div class="alert alert-danger mt-2" *ngIf="!producto.name" >
+                Debe de existir un Nombre
+            </div>
+        </div>
+
+        <label for="status" class="col-form-label col-sm-2">Status Producto</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="status" [(ngModel)]="producto.status">
+            <div class="alert alert-danger mt-2" *ngIf="!producto.name" >
+                Debe de existir un Status
+            </div>
+        </div>
+        
+        <button id="botton1"class="btn btn-success" role="button" (click)="create()">Registrar producto</button>
+        
+    </form>
+</div>

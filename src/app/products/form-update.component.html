@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card-body"></div>
+    <h2 class="card-title">{{titulo}}</h2>
+    <form>
+        <label for="name" class="col-form-label col-sm-2">Nombre Producto</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" [(ngModel)]="producto.name">
+        </div>
+
+        <label for="status" class="col-form-label col-sm-2">Status Producto</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="status" [(ngModel)]="producto.status">
+        </div>
+        <button id="botton1" class="btn btn-success" role="button" (click)="update()">Actualizar producto</button>
+    </form>
+</div>

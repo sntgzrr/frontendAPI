@@ -8,7 +8,8 @@ import { Producto } from './producto';
 })
 export class ProductoService {
   
-  private url:string="http://localhost:8080/products";
+  private url:string="/products";
+
 
   constructor(private http:HttpClient) { }
 
@@ -34,7 +35,7 @@ export class ProductoService {
   }
 
   //Get por ID.
-  delete(id:number):Observable<Producto>{
+  delete(id:number | undefined):Observable<Producto>{
     return this.http.delete<Producto>(this.url+"/"+id);
   }
   
