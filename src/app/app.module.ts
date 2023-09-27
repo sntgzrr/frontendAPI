@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
-import { FormProductsComponent } from './products/form-products.component';
-import { FormUpdateComponent } from './products/form-update.component';
+import { FormProductsComponent } from './products/forms/form-products.component';
+import { FormUpdateComponent } from './products/forms/form-update.component';
 
 const routes:Routes=[
   {path:"",redirectTo:"/products",pathMatch:"full"},

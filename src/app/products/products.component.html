@@ -1,7 +1,7 @@
 <div class="container">
   <button id="button1"class="btn btn-info" type="button" [routerLink]="['/products/form']">Añadir producto</button>
-    
-  <table class="table table-striped">
+  <button id="button2"class="btn btn-info" type="button" (click)="exportexcel()">Expotar en Excel</button>
+  <table  id="excel-table" class="table table-striped">
       <thead>
         <tr>
             <th scope="col">ID</th>

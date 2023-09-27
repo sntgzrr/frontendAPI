@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from './producto';
-import { ProductoService } from './producto.service';
+import { Producto } from './model/producto';
+import { ProductoService } from '../services/producto.service';
+import * as XLSX from "xlsx";
 
 @Component({
   selector: 'app-products',
@@ -10,9 +11,8 @@ import { ProductoService } from './producto.service';
 export class ProductsComponent implements OnInit{
 
   titulo: string ="Lista De Productos";
-
+  fileName="Products.xlsx";
   productos:Producto[] | undefined;
-  idExists:boolean | undefined;
   constructor(private productoService: ProductoService){}
 
   ngOnInit(): void {
@@ -29,4 +29,13 @@ export class ProductsComponent implements OnInit{
     )
   }
 
+  exportexcel(): void{
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+  
+    XLSX.writeFile(wb, this.fileName);
+  }
 }

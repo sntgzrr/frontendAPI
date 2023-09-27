@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Producto } from './producto';
-
+import { Producto } from '../products/model/producto';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
   
   private url:string="/products";
-
 
   constructor(private http:HttpClient) { }
 
@@ -34,9 +32,8 @@ export class ProductoService {
     return this.http.put<Producto>(this.url, producto);
   }
 
-  //Get por ID.
+  //Delete por ID.
   delete(id:number | undefined):Observable<Producto>{
     return this.http.delete<Producto>(this.url+"/"+id);
   }
-  
 }
